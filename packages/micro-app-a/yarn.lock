@@ -1219,6 +1219,11 @@
   resolved "http://npm.crgt.xyz/@csstools%2fnormalize.css/-/normalize.css-10.1.0.tgz#f0950bba18819512d42f7197e56c518aa491cf18"
   integrity sha1-8JULuhiBlRLUL3GX5WxRiqSRzxg=
 
+"@dun-cat/react-app-rewire-micro-frontends@0.0.2":
+  version "0.0.2"
+  resolved "http://npm.crgt.xyz/@dun-cat%2freact-app-rewire-micro-frontends/-/react-app-rewire-micro-frontends-0.0.2.tgz#a1f3c1189e8ab4713a03027ef593870c42cdedc6"
+  integrity sha1-ofPBGJ6KtHE6AwJ+9ZOHDELN7cY=
+
 "@eslint/eslintrc@^0.4.2":
   version "0.4.2"
   resolved "http://npm.crgt.xyz/@eslint%2feslintrc/-/eslintrc-0.4.2.tgz#f63d0ef06f5c0c57d76c4ab5f63d3835c51b0179"

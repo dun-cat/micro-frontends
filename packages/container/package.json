@@ -13,11 +13,12 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
+  "config-overrides-path": "node_modules/@dun-cat/react-app-rewire-micro-frontends",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -35,5 +36,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@dun-cat/react-app-rewire-micro-frontends": "0.0.2",
+    "react-app-rewired": "^2.1.8"
   }
 }

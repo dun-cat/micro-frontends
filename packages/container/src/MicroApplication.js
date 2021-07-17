@@ -12,19 +12,21 @@ class MicroApplication extends React.Component {
       return;
     }
 
+    // 通过资源清单获取入口文件脚本
     fetch(`${host}/asset-manifest.json`)
       .then(res => res.json())
       .then(manifest => {
         const script = document.createElement('script');
         script.id = scriptId;
         script.crossOrigin = '';
-        script.src = `${host}${manifest['main.js']}`;
+        script.src = `${host}${manifest.files['main.js']}`;
         script.onload = this.renderMicroApplication;
         document.head.appendChild(script);
       });
   }
 
   componentWillUnmount() {
+
     const { name, window } = this.props;
 
     window[`unmount${name}`](`${name}-container`);
@@ -36,7 +38,8 @@ class MicroApplication extends React.Component {
   };
 
   render() {
-    return <main id={`${this.props.name}-container`} />;
+    const { name } = this.props;
+    return <main id={`${name}-container`} />;
   }
 }
 

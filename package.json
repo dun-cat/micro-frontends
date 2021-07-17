@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "create": "lerna create"
+    "bootstrap": "lerna bootstrap",
+    "build": "lerna run build",
+    "start": "lerna run start --scope shared-content --scope micro-app-a --scope micro-app-b --scope container --parallel"
   },
   "repository": {
     "type": "git",

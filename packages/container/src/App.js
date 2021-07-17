@@ -1,31 +1,20 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Header from './components/Header';
 import MicroApplication from './MicroApplication';
 import About from './components/About';
 
 const {
-  REACT_APP_BROWSE_HOST: browseHost,
-  REACT_APP_RESTAURANT_HOST: restaurantHost,
+  REACT_APP_A_HOST: microAppAHost,
+  REACT_APP_B_HOST: microAppBHost,
 } = process.env;
 
-let numRestaurants = 0;
-fetch(`${process.env.REACT_APP_CONTENT_HOST}/restaurants.json`)
-  .then(res => res.json())
-  .then(restaurants => {
-    numRestaurants = restaurants.length;
-  });
-
-const getRandomRestaurantId = () =>
-  Math.floor(Math.random() * numRestaurants) + 1;
-
 const MicroAppA = ({ history }) => (
-  <MicroApplication history={history} host={browseHost} name="micro-app-a" />
+  <MicroApplication history={history} host={microAppAHost} name="MicroAppA" />
 );
 const MicroAppB = ({ history }) => (
-  <MicroApplication history={history} host={restaurantHost} name="micro-app-b" />
+  <MicroApplication history={history} host={microAppBHost} name="MicroAppB" />
 );
-const Random = () => <Redirect to={`/restaurant/${getRandomRestaurantId()}`} />;
 
 const App = () => (
   <BrowserRouter>
@@ -33,8 +22,8 @@ const App = () => (
       <Header />
       <Switch>
         <Route exact path="/" component={MicroAppA} />
-        <Route exact path="/app-a/:id" component={MicroAppB} />
-        <Route exact path="/app-b" render={Random} />
+        <Route exact path="/app-a/:id" component={MicroAppA} />
+        <Route exact path="/app-b" render={MicroAppB} />
         <Route exact path="/about" render={About} />
       </Switch>
     </React.Fragment>

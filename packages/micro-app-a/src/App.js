@@ -13,15 +13,7 @@ class App extends React.Component {
     };
   }
 
-  componentDidMount() {
-    const host = process.env.REACT_APP_CONTENT_HOST;
-    fetch(`${host}/restaurants.json`)
-      .then(result => result.json())
-      .then(restaurants => { })
-      .catch(() => {
-        // this.setState({ loading: false, error: true });
-      });
-  }
+  componentDidMount() { }
 
   render() {
     return (

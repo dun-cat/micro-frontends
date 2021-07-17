@@ -13,7 +13,7 @@ const Header = () => (
           <NavLink to="/">微应用 A</NavLink>
         </li>
         <li>
-          <NavLink to="/random">微应用 B</NavLink>
+          <NavLink to="/app-b">微应用 B</NavLink>
         </li>
         <li>
           <NavLink to="/about">容器内嵌应用 C</NavLink>
